@@ -1,6 +1,6 @@
 
-docker build . --file=Dockerfile -t gitlab-runner-envoy:latest --squash --build-arg VERSION=2
+docker build . --file=Dockerfile -t gitlab-runner-envoy-node:latest --squash --build-arg VERSION=2
 
-docker tag gitlab-runner-envoy:latest groupbwt/gitlab-runner-envoy:latest
+docker tag gitlab-runner-envoy-node:latest naymkazp/gitlab-runner-envoy-node:latest
 
-docker push groupbwt/gitlab-runner-envoy:latest
+docker push naymkazp/gitlab-runner-envoy-node:latest

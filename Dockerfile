@@ -3,19 +3,21 @@ FROM php:7.4-alpine
 
 RUN set -eux; \
   apk add --no-cache \
-    bash \
-    tini \
-    freetype-dev \
-    libjpeg-turbo-dev \
-    libmcrypt-dev \
-    libpng-dev \
-    zlib-dev \
-    openssh-client
+  bash \
+  tini \
+  freetype-dev \
+  libjpeg-turbo-dev \
+  libmcrypt-dev \
+  libpng-dev \
+  zlib-dev \
+  openssh-client \
+  nodejs \
+  nodejs-npm
 
 RUN printf "# composer php cli ini settings\n\
-date.timezone=UTC\n\
-memory_limit=-1\n\
-" > $PHP_INI_DIR/php-cli.ini
+  date.timezone=UTC\n\
+  memory_limit=-1\n\
+  " > $PHP_INI_DIR/php-cli.ini
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer
